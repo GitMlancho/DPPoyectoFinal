@@ -1,7 +1,7 @@
 <%-- 
     Document   : footer
-    Created on : 27 ene. 2026, 12:02:07 a. m.
-    Author     : Admin
+    Created on : 9 set. 2024, 22:49:26
+    Author     : Petuel
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

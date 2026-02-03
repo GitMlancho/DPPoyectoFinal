@@ -1,17 +1,8 @@
-<%-- 
-    Document   : footer
-    Created on : 9 set. 2024, 22:49:26
-    Author     : Petuel
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<script src="${pageContext.request.contextPath}/js/jquery-3.7.1.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/feather.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/Chart.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/home.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/sweetalert2.js" type="text/javascript"></script>
+</body>
 </html>

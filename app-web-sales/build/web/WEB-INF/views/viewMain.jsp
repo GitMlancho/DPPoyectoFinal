@@ -1,11 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<jsp:include page="../../resources/commons/header.jsp" />
+<jsp:include page="../../resources/commons/menu.jsp" />
+<jsp:include page="../../resources/commons/footer.jsp" />

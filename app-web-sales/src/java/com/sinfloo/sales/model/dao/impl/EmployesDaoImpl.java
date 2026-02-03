@@ -40,16 +40,16 @@ public class EmployesDaoImpl implements EmployesDao {
         query.append(",mp.c_state ");
         query.append(",u.n_id_ubigeo ");
         query.append(",u.c_departamento_inei ");
-        query.append(",u.c_description ");
+        query.append(",u.c_departamento ");
         query.append(",u.c_provincia_inei ");
-        query.append(",u.c_c_provincia ");
+        query.append(",u.c_provincia ");
         query.append(",u.c_ubigeo_inei ");
         query.append(",u.c_distrito ");
         query.append("from m_employes e INNER JOIN m_person p ");
-        query.append("on e.n_id_person=p.n_id_person INNER JOIN m_profile mp");
+        query.append("on e.n_id_person=p.n_id_person INNER JOIN m_profile mp ");
         query.append("on e.n_id_profile=mp.n_id_profile INNER JOIN m_ubigeo u ");
-        query.append("ON e.n_id_ubigeo=u.n_id_ubigeo");
-        query.append("WHERE e.c_username=? and e.c_password=? and e.c_sate='A'");
+        query.append("ON e.n_id_ubigeo=u.n_id_ubigeo ");
+        query.append("WHERE e.c_username=? and e.c_password=? and e.c_state='1'");
         try {
             conn = ConnectDB.getConnection();
             ps = conn.prepareStatement(query.toString());

@@ -28,7 +28,7 @@
         <div class="card">
             <div class="card-body form-signin">
                 <form id="loginForm" class="text-center">
-                    <img class="mb-4" src="img/logo.png" width="72" height="72">
+                    <img class="mb-4" src="img/logo1.png" width="90" height="90">
                     <h1 class="h3 mb-3 fw-normal">Iniciar Session</h1>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="bi bi-person-circle"></i></span>

@@ -12,6 +12,10 @@
         <servlet-name>ControllerPrincipal</servlet-name>
         <servlet-class>com.sinfloo.sales.controller.ControllerMain</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControllerProduct</servlet-name>
+        <servlet-class>com.sinfloo.sales.controller.ControllerProduct</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletContextProvider</servlet-name>
         <url-pattern>/ServletContextProvider</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ControllerPrincipal</servlet-name>
         <url-pattern>/main/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerProduct</servlet-name>
+        <url-pattern>/mnto/product/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

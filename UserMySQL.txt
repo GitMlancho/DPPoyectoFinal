@@ -1,2 +1,0 @@
-Nombre: MySQL96
-Contraseña: root

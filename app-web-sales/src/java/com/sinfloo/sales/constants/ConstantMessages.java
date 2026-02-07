@@ -18,6 +18,8 @@ public class ConstantMessages {
     public static final String MESSAGE_VAL_403 = "Error, datos incompletos";
     public static final String MESSAGE_VAL_404 = "Error, No autorizado";
     public static final String MESSAGE_VAL_405 = "Error, Usuario o numero de documento ua existe!";
+    
+    public static final String MESSAGE_VAL_410 = "Producto ya existe!";
 
     public static final String MSG_PAGE_NOT_FOUND = "The page not found!";
     public static final String MSG_PAGE_NOT_AUTHO = "The page is not authorized!";

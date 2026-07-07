@@ -5,5 +5,8 @@
 <script src="${pageContext.request.contextPath}/js/home.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/js/sweetalert2.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/js/mnto/products.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/sales/sales.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/mnto/customer.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/utils.js" type="text/javascript"></script>
 </body>
 </html>

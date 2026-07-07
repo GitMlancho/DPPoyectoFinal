@@ -1,4 +1,3 @@
-<!-- Tabla de productos -->
 <div class="container">
     <a class="btn btn-info" id="btnCreateProduct" data-bs-toggle="modal" data-bs-target="#modalCreateProduct"><i class="bi bi-plus"></i> Nuevo</a>
     <div class="table-responsive-sm">
@@ -34,7 +33,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <label class="form-label">Codigo</label>
+                            <label class="form-label">Código</label>
                             <input type="text" id="code" class="form-control" readonly="">
                             <input type="hidden" id="productId" readonly="">
                         </div>
@@ -43,7 +42,7 @@
                             <input type="text" id="name" class="form-control">
                         </div>
                         <div class="col-sm-12">
-                            <label class="form-label">Descripcion</label>
+                            <label class="form-label">Descripción</label>
                             <input type="text" id="description" class="form-control" >
                         </div>
                         <div class="col-sm-12">

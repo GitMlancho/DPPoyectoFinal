@@ -10,6 +10,11 @@
 <project name="app-web-sales" default="default" basedir=".">
     <description>Builds, tests, and runs the project app-web-sales.</description>
     <import file="nbproject/build-impl.xml"/>
+	<!--<target name="-post-dist">
+		<delete file="D:\\1-SinFloo\\${ant.project.name}.war" />
+		<move file="${dist.war}" tofile="D:\\1-SinFloo\\${ant.project.name}.war"/>
+	</target>-->
+
     <!--
 
     There exist several targets which are by default empty and which can be 

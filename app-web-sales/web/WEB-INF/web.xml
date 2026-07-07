@@ -14,7 +14,19 @@
     </servlet>
     <servlet>
         <servlet-name>ControllerProduct</servlet-name>
-        <servlet-class>com.sinfloo.sales.controller.ControllerProduct</servlet-class>
+        <servlet-class>com.sinfloo.sales.controller.mnto.ControllerProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerSale</servlet-name>
+        <servlet-class>com.sinfloo.sales.controller.sale.ControllerSale</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerCustomer</servlet-name>
+        <servlet-class>com.sinfloo.sales.controller.mnto.ControllerCustomer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerFile</servlet-name>
+        <servlet-class>com.sinfloo.sales.controller.sale.ControllerFile</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletContextProvider</servlet-name>
@@ -31,6 +43,18 @@
     <servlet-mapping>
         <servlet-name>ControllerProduct</servlet-name>
         <url-pattern>/mnto/product/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerSale</servlet-name>
+        <url-pattern>/sale/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerCustomer</servlet-name>
+        <url-pattern>/mnto/customer/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerFile</servlet-name>
+        <url-pattern>/download</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

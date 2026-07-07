@@ -15,7 +15,6 @@ function getProducts() {
         return response.json();
     }).then(data => {
         if (data.code === "200") {
-            console.log(data.products);
             showProducts(data.products);
         } else {
             showToast("error", data.message);
@@ -38,7 +37,7 @@ function showProducts(products) {
         row.append($('<td class="text-center">').text(value.state === 'A' ? 'ACTIVO' : 'INACTIVO'));
         row.append($('<td class="text-center">')
                 .append('<a class="btn btn-warning btn-sm ms-1" onclick="editProduct(' + value.productId + ')"><i class="bi bi-pencil-square"></i></a>')
-                .append('<a class="btn btn-danger btn-sm ms-1"><i class="bi bi-trash"></i></a>'));
+                .append('<a class="btn btn-danger btn-sm ms-1" onclick="deleteProduct(' + value.productId + ')"><i class="bi bi-trash"></i></a>'));
         $("#tableProducts tbody").append(row);
     });
 }
@@ -54,13 +53,13 @@ function saveProduct() {
         var fielValue = $(element).val();
         formData[fielName] = fielValue;
     });
-
+    console.log(JSON.stringify(formData));
     var url = "/app-web-sales/mnto/product/save";
     fetch(url, {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json; charset=UTF-8'
         }
     }).then(response => {
         if (!response.ok) {
@@ -111,6 +110,42 @@ function editProduct(productId) {
     $("code").attr("readonly");
 }
 
+function  deleteProduct(productId) {
+    var url = "/app-web-sales/mnto/product/delete/?id=" + productId;
+    Swal.fire({
+        title: "Estas seguro de eliminar?",
+        text: "Recuerda! no podras recuperar.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "SI",
+        cancelButtonText: "NO"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            confirmDelete(url);
+        }
+    });
+}
+function confirmDelete(url){
+    fetch(url,{
+        method: 'GET'
+    }).then(response=>{
+        if(!response.ok){
+            throw new Error('Error al consumir el controlador');
+        }
+        return response.json();
+    }).then(data=>{
+        if(data.code==="200"){
+            getProducts();
+            showToast("success",data.message);            
+        }else{
+            showToast("warning",data.message);
+        }
+    }).catch(error=>{
+        showToast("error",error);
+    });
+}
 function clearModalProduct() {
     $("#modalCreateProduct").modal('hide');
     $(".modal-backdrop").remove();

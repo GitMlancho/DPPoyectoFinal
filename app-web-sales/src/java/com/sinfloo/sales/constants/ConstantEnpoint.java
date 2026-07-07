@@ -17,6 +17,9 @@ public class ConstantEnpoint {
     public static final String PAGE_LOGIN="/index.jsp";
     public static final String PAGE_MAIN="/WEB-INF/views/viewMain.jsp";
     public static final String PAGE_PRODUCTS="/WEB-INF/views/mnto/viewProducts.jsp";
+    public static final String PAGE_SALE="/WEB-INF/views/sales/viewSales.jsp";
+    
+    public static final String PAGE_CUSTOMER_EDIT="/WEB-INF/views/mnto/viewEditCustomer.jsp";
     
     
     
@@ -29,4 +32,6 @@ public class ConstantEnpoint {
     public static final String CANCEL="/cancel";
     public static final String ADD="/add";
     public static final String UPDATE="/update";
+    
+    public static final String OBTAIN_CUSTOMER="/obtain/customer";
 }

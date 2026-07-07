@@ -20,8 +20,17 @@ public class ConstantMessages {
     public static final String MESSAGE_VAL_405 = "Error, Usuario o numero de documento ua existe!";
     
     public static final String MESSAGE_VAL_410 = "Producto ya existe!";
-
+    public static final String MESSAGE_VAL_411 = "Codigo de producto no existe o stock agotado!";
+    public static final String MESSAGE_VAL_412 = "No puede agregar mas productos, stock agotado!";
+    
     public static final String MSG_PAGE_NOT_FOUND = "The page not found!";
     public static final String MSG_PAGE_NOT_AUTHO = "The page is not authorized!";
-
-}
+    
+    public static final String MESSAGE_VAL_510="Cliente no esta registrado, desea registrar?";
+    public static final String MESSAGE_VAL_511="Cliente no existe!";
+    
+    public static final String MESSAGE_VAL_610 = "Para continuar, debe agregar productos!";
+    public static final String MESSAGE_VAL_611 = "Producto no existe!";
+    
+    public static final String MESSAGE_VAL_710="Para continuar debe iniciar la venta";
+    }

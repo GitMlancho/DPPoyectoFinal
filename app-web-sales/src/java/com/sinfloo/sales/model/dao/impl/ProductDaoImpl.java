@@ -112,7 +112,48 @@ public class ProductDaoImpl implements ProductDao {
     
     @Override
     public Product getObjectByCode(String code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Product product=null;
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            connection = ConnectDB.getConnection();
+            ps = connection.prepareStatement("select * from m_product where c_serie=?");
+            ps.setString(1, code);
+            rs = ps.executeQuery();
+            while (rs.next()) {  
+                product = new Product();
+                product.setProductId(rs.getInt("n_id_product"));
+                product.setCode(rs.getString("c_serie"));
+                product.setName(rs.getString("c_name"));
+                product.setDescription(rs.getString("c_description"));
+                product.setPrice(rs.getDouble("n_price"));
+                product.setStock(rs.getInt("n_stock"));
+                product.setState(rs.getString("c_state"));
+            }
+        } catch (SQLException e) {
+            LOGGER.log(Level.INFO, "ERROR:{0}", e.getMessage());
+        } catch (Exception e) {
+            LOGGER.log(Level.INFO, "ERROR:{0}", e.getMessage());
+            if (connection != null) {
+                ConnectDB.releaseConnection(connection);
+            }
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    ConnectDB.releaseConnection(connection);
+                }
+            } catch (SQLException e) {
+                LOGGER.log(Level.INFO, "ERROR:{0}", e.getMessage());
+            }
+        }
+        return product;
     }
     
     @Override
@@ -188,7 +229,38 @@ public class ProductDaoImpl implements ProductDao {
     
     @Override
     public void deleteObjectById(int id) {
-        
+        Connection connection=null;
+        PreparedStatement ps=null;
+        try {
+            StringBuilder query=new StringBuilder();
+            query.append("DELETE FROM m_product where n_id_product=?");
+            
+            connection=ConnectDB.getConnection();
+            ps=connection.prepareStatement(query.toString());
+            ps.setInt(1, id);
+            
+            ps.executeUpdate();
+            
+        } catch (SQLException e) {
+            LOGGER.log(Level.INFO, "ERROR:{0}", e.getLocalizedMessage());
+        } catch (Exception e) {
+            LOGGER.log(Level.INFO, "ERROR:{0}", e.getLocalizedMessage());
+            if (connection != null) {
+                ConnectDB.releaseConnection(connection);
+            }
+            throw new NumberFormatException(e.getLocalizedMessage());
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    ConnectDB.releaseConnection(connection);
+                }
+            } catch (SQLException e) {
+                LOGGER.log(Level.INFO, "ERROR:{0}", e.getLocalizedMessage());
+            }
+        }
     }
     
     @Override
